@@ -1,17 +1,14 @@
-var verse1 = " bottles of beer on the wall, "
-var verse2 = " bottles of beer, take one down, pass it around, "
-var verse3 = " bottles of beer on the wall!"
+var holdMyBeer = document.getElementById("holdMyBeer");
 
-var bottles = 99
+var drink = "beer";
 
-while (bottles >= 1) {
-	console.log(
-		bottles + verse1 + bottles + verse2 + bottles + verse3
-		)
-	bottles = bottles - 1
-};
+var lyrics = "";
 
-console.log("No more beer here! *Cue Closing Time by Supersonic*")
-// else {
-// 	console.log("We're all done here!")
-// };
+var bottles = "99";
+
+for (var i=bottles; i > 0; i--){
+
+	lyrics = i + " bottles of " + drink + " on the wall, " + i + " bottles of " + drink + ", take one down, pass it around, " + (i - 1) + " bottles of " + drink + " on the wall!"
+
+	holdMyBeer.innerHTML += lyrics + "<br/><br/>";		
+}
