@@ -1,0 +1,85 @@
+/*Elements*/
+
+body {
+    color: #fff;
+    font-size:16px;
+    line-height: 1.5;
+    font-family: sans-serif;
+}
+
+p {
+    font-weight: 400;
+}
+
+/*Flexbox*/
+
+.container {
+    display: flex;
+    width: 100%
+    height: 100%
+}
+
+
+.dimmed {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex:100;
+}
+
+/*Transparent Overlay*/
+
+.dimmed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .7;
+  z-index: -90; 
+}
+
+/*Video Stuff*/
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
